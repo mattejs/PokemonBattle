@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <title>Pokemon - Gotta Catch Them All!</title>
+    <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body class="second">
+                                                                                                                                                                                                    
+    <h1>
+        <img src="https://i.pinimg.com/originals/fd/18/c6/fd18c6d26d4d9d26a0bd9d1a2fb2bd04.png"/>
+    </h1>
+    <div>
+        <img class="imgPokemon" src="{{icon1}}" alt= "Pokemon {{pokemon1}} icon">
+        <button type="button">{{pokemon1}}</button>
+        
+        <b class = "b-poke">vs</b>
+        
+        <button type="button">{{pokemon2}}</button>
+        
+        <img class="imgPokemon" src="{{icon2}}" alt="Pokemon {{pokemon2}} icon">
+    </div>
+    
+        <button type="button" class="button-winner">{{proba}}% {{winner}} Wins!</button>
+        </br>
+        <a href="/" role="button"> <button class = "btn-return">Return</button></a>
+</body>
+</html>

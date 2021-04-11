@@ -1,0 +1,135 @@
+body {
+background: url(img/bg.jpg);
+text-align:center;
+background-position: center center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+background-color: #464646;
+}
+
+.second{
+background:url(img/bg1.jpg);
+text-align:center;
+background-position: center center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+background-color: #464646;
+}
+
+img{
+    width:35%;
+    height:auto;
+}
+
+.imgPokemon{
+    width:19%;
+    height:auto;
+    position: relative;
+    top: 0px;
+    margin-left:20px;
+    margin-right:20px;
+    
+}
+
+.imgNotFound{
+    width:55%;
+    height:auto;
+}
+	
+input[type=text] {
+  width: 15%;
+  height: auto;
+  font-family: Times New Roman, Times, serif;
+  border-radius: 12px; 
+  text-align:center; 
+  border:2px solid black; 
+  height:40px;
+  font-size: 20px;
+  position: relative;
+  top: 90px;
+
+
+}
+
+input[type=submit] {
+  width: 15%;
+  height: auto;
+  font-size:22px; 
+  color:blanchedalmond; 
+  background-color: black;
+  border-radius: 8px;
+  height:50px;
+  width:100px;
+  font-family: Times New Roman, Times, serif;
+  cursor:pointer;
+  position: relative;
+  top: 100px;
+}
+
+button{
+  position: relative;
+  top: -200px;
+  color:black;
+  background-color: Gainsboro;
+  border-radius: 8px;
+  border-color: black;
+  height:50px;
+  font-size: 22px;
+  width:auto;
+  font-family: Times New Roman, Times, serif;
+  cursor:pointer;
+  margin: 5px;
+  margin-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.button-winner{
+  font-size: 24px;
+  height:60px;
+  width:auto;
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.b-home{
+  position: relative;  
+  font-family: Times New Roman, Times, serif;
+  font-size: 28px;
+  top: 90px;
+}
+.b-poke{
+  position: relative;
+  top: -200px;  
+  font-family: Times New Roman, Times, serif;
+  font-size: 28px;
+  text-align: center;
+
+}
+
+.btn-return{
+  width: 15%;
+  height: auto;
+  font-size:22px; 
+  color:blanchedalmond; 
+  background-color: black;
+  border-radius: 8px;
+  height:50px;
+  width:110px;
+  font-family: Times New Roman, Times, serif;
+  cursor:pointer;
+}
+.btn-return-nf{
+  font-size:24px; 
+  color:blanchedalmond; 
+  background-color: black;
+  border-radius: 8px;
+  height:45px;
+  width:105px;
+  font-family: Times New Roman, Times, serif;
+  cursor:pointer;
+  position: relative;
+  top:-30px;
+}
