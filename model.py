@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-import pickle
 
 pokemon=pd.read_csv('pokemon.csv', index_col = 0)
 combats=pd.read_csv('combats.csv')
@@ -19,7 +18,7 @@ combats.Winner[combats.Winner == combats.Second_pokemon] = 2
 # zapisana u obliku rednog broja iz pokemon.csv traži njihove statse i računa 
 # njihovu razliku, zapisuje u novi df te ga vraća
 def get_stats_dif(pokemons_df):
-    pokemon_stats = ["HP","Attack","Defense","Sp. Atk","Sp. Def","Speed","Generation","Legendary"] 
+    pokemon_stats = ["HP","Attack","Defense","Sp_Atk","Sp_Def","Speed","Generation","Legendary"] 
     stats_df = pokemon[pokemon_stats].T.to_dict("list")
     first_pokemon = pokemons_df.First_pokemon.map(stats_df)
     second_pokemon = pokemons_df.Second_pokemon.map(stats_df)
@@ -51,7 +50,7 @@ print("Time passed: %s seconds " % (time.time() - start_time))
 
 from sklearn.neighbors import KNeighborsClassifier
 start_time = time.time()
-KNN = KNeighborsClassifier(n_neighbors=5)
+KNN = KNeighborsClassifier(n_neighbors = 5)
 model_2 = KNN.fit(x_train, y_train)
 prediction = model_2.predict(x_test) 
 print('Accuracy KNN: ', accuracy_score(prediction, y_test) * 100)
@@ -68,7 +67,7 @@ print("Time passed: %s seconds " % (time.time() - start_time))
 
 start_time = time.time()
 Grad_Boosting = GradientBoostingClassifier( n_estimators = 100, max_depth = 1, learning_rate = 1,
-                                           random_state = 0)
+                                            random_state = 0)
 model_4 = Grad_Boosting.fit(x_train, y_train) 
 prediction = model_4.predict(x_test) 
 print('Accuracy GB: ', accuracy_score(prediction, y_test) * 100)
@@ -93,48 +92,7 @@ prediction = model_3.predict(new_test_data)
 test_data["Winner"] = [test_data["First_pokemon"][i] if prediction[i] == 1 else test_data["Second_pokemon"][i] for i in range(len(prediction))]
 pokemon_test_names = test_data[combats_columns].replace(pokemon.Name)
 
-#(pokemon_test_names[1:10])
+print(pokemon_test_names[1:10])
 
 import joblib
 joblib.dump(model_3,'modeljoblib')
-
-'''
-# testiranje na unosu vlastitih podataka (simulacija korisničkog unosa)
-pokemon1 = "Pikachu"
-pokemon2 = "Charizard"    
-
-# if(any(pokemon.Name == pokemon1)):
-#     print("Prvi pokemon je ", pokemon1)
-# else:
-#     print("Prvi pokemon pogrešno napisan ili nepostojeći")
-# if(any(pokemon.Name == pokemon2)):
-#     print("Drugi pokemon je ", pokemon1)
-# else:
-#     print("Drugi pokemon pogrešno napisan ili nepostojeći")
-
-# get_stats_num radi sa brojevima pokemona u df kao unos zbog combats.csv i tests.csv pa
-# je potrebno pretvoriti ih u brojevni oblik prije predaje funkciji
-pokemon1_num = pokemon[pokemon.Name == pokemon1].index.values
-pokemon2_num = pokemon[pokemon.Name == pokemon2].index.values
-pokemon_df = pd.DataFrame(list(zip(pokemon1_num, pokemon2_num)), columns = ["First_pokemon", "Second_pokemon"])
-
-new_pokemon_df = get_stats_dif(pokemon_df)
-prediction = model_3.predict(new_pokemon_df)
-
-pokemon_df["Winner"] = [pokemon_df["First_pokemon"][0] if prediction[0] == 1 else pokemon_df["Second_pokemon"][0]]
-pokemon_names = pokemon_df[combats_columns].replace(pokemon.Name)
-
-print(pokemon_names)
-print(pokemon_names.Winner.values[0])
-
-
-# pokemon1_test = input("Unesite prvog pokemona ") 
-# pokemon2_test = input("Unesite drugog pokemona ") 
-
-# while((any(pokemon.Name == pokemon1_test) == False) or (any(pokemon.Name == pokemon2_test) == False)):
-#     if(any(pokemon.Name == pokemon1_test)):
-#        pokemon2_test = input("Unesite drugog pokemona ponovo ")
-#     else:
-#         pokemon1_test = input("Unesite prvog pokemona ponovo ")
-
-'''
