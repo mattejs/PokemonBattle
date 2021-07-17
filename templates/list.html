@@ -22,8 +22,8 @@
 		       
 	{% for item in items %}
 	<tr>
-	    <td>{{previousbattles.id}}</td>
-	    <td>{{previousbattles.firstPokemon}}</td>
+	    <td>{{item.id}}</td>
+	    <td>{{item.firstPokemon}}</td>
 	    <td><img class="imgPokemon" src="{{item[3]}}" alt="Pokemon {{item[1]}} icon"></td>  
 	    <td>{{ item[5] }}</td>	    
 	    <td>{{ item[4] }}</td>
