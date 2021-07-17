@@ -11,7 +11,8 @@ import psycopg2
 app = Flask(__name__)
 app.config['upload_icons_folder']='icons'
 app.config['upload_folder']='plots'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://oimbduqmuqvvyg:8b8e331d75ced64c4b0e4873fc5467dab5dde780600a96ed677b4a20ae3b8484@ec2-54-220-195-236.eu-west-1.compute.amazonaws.com:5432/d8qsvc40ce6n3s'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://oimbduqmuqvvyg:8b8e331d75ced64c4b0e4873fc5467dab5dde780600a96ed677b4a20ae3b8484@ec2-54-220-195-236.eu-west-1.compute.amazonaws.com:5432/d8qsvc40ce6n3s'
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///previous_battles.db'
 
 db = SQLAlchemy(app)
