@@ -18,6 +18,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://oimbduqmuqvvyg:8b8e331d75c
 db = SQLAlchemy(app)
 
 class PreviousBattles(db.Model):
+    __tablename__ = "previousbattles"
     id=db.Column('ID', db.Integer, primary_key=True)
     firstPokemon = db.Column(db.String(50), nullable=False)
     firstPokemonID = db.Column(db.Integer, nullable=False)
