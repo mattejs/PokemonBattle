@@ -1,1 +1,1 @@
-web: gunicorn PokeApp:app
+web: gunicorn Pokeapp:app
