@@ -5,6 +5,7 @@ import numpy as np
 from os import path
 import matplotlib.pyplot as plt
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import desc
 import sqlite3
 import psycopg2
 
