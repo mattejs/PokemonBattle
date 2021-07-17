@@ -6,6 +6,7 @@ from os import path
 import matplotlib.pyplot as plt
 from flask_sqlalchemy import SQLAlchemy
 import sqlite3
+import psycopg2
 
 app = Flask(__name__)
 app.config['upload_icons_folder']='icons'
