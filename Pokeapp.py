@@ -43,10 +43,8 @@ def home():
     return render_template('home.html')
     
 @app.route('/list', methods=['GET', 'POST'])
-def lista():
-    conn = sqlite3.connect('previous_battles.db')
-    cursor = conn.execute('SELECT * FROM previous_battles ORDER BY id DESC LIMIT 6')
-    items = cursor.fetchall()
+def lista():    
+    items = PreviousBattles.query.all()
     return render_template('list.html', items=items)
 
 @app.route('/battle', methods=['POST','GET'])
