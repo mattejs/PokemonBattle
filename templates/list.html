@@ -22,13 +22,13 @@
 		       
 	{% for item in items %}
 	<tr>
-	    <td>{{item.id}}</td>
+	    <td>{{item.firstPokemonID}}</td>
 	    <td>{{item.firstPokemon}}</td>
-	    <td><img class="imgPokemon" src="{{item[3]}}" alt="Pokemon {{item[1]}} icon"></td>  
-	    <td>{{ item[5] }}</td>	    
-	    <td>{{ item[4] }}</td>
-	    <td><img class="imgPokemon" src="{{item[6]}}" alt="Pokemon {{item[4]}} icon"></td> 
-	    <td>{{ item[7] }}</td>	    
+	    <td><img class="imgPokemon" src="{{item.firstImagePath}}" alt="Pokemon {{item.firstPokemon}} icon"></td>  
+	    <td>{{ item.secondPokemonID }}</td>	    
+	    <td>{{ item.secondPokemon }}</td>
+	    <td><img class="imgPokemon" src="{{item.secondImagePath}}" alt="Pokemon {{item.secondPokemon}} icon"></td> 
+	    <td>{{ item.winner }}</td>	    
 	</tr>
 	{% endfor %}
 
