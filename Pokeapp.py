@@ -46,7 +46,7 @@ def home():
     
 @app.route('/list', methods=['GET', 'POST'])
 def lista():    
-    items = PreviousBattles.query.all()
+    items = PreviousBattles.query.order_by(id.desc()).limit(6).all()
     return render_template('list.html', items=items)
 
 @app.route('/battle', methods=['POST','GET'])
