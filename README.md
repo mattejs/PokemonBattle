@@ -6,4 +6,4 @@
 4. Type `python Pokeapp.py` to run application on localhost
 5. Go to the web browser and open [localhost:5000](http://localhost:5000/)
 
-**Heroku link: https://pokebattlepredict.herokuapp.com/ **
+###Heroku link: https://pokebattlepredict.herokuapp.com/ 
